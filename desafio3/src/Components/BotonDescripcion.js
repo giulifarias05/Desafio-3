@@ -11,7 +11,7 @@ const BuscadorRecetas = () => {
   const agregarIngrediente = (e) => {
     e.preventDefault();
     if (ingrediente) {
-      setIngredientes([ingredientes, { ingrediente, cantidad }]);
+      setIngredientes([...ingredientes, { ingrediente, cantidad }]);//preguntar
       setIngrediente('');
       setCantidad('');
     }
@@ -35,7 +35,7 @@ const BuscadorRecetas = () => {
 
       try {
         const response = await axios.get(`https://api.edamam.com/search?q=${ingredientesParaBuscar}&app_id=${appId}&app_key=${appKey}&lang=${idioma}`);
-        const primeraReceta = response.data.hits[0].recipe; 
+        const primeraReceta = response.data.hits[0].recipe; //preguntar
         setReceta(primeraReceta);
       } catch (error) {
         console.error(error);
@@ -58,6 +58,7 @@ const BuscadorRecetas = () => {
               />
               <label className='form' >Cantidad: </label> 
               <input
+               
                 type="text"
                 value={cantidad}
                 onChange={(e) => setCantidad(e.target.value)}
@@ -75,34 +76,41 @@ const BuscadorRecetas = () => {
              src="https://www.freeiconspng.com/thumbs/remove-icon-png/remove-icon-png-24.png"
              alt="Eliminar"
              className='eliminarBoton'
-           /> </button>
+           />
+</button>
           </li>
            ))}
-          </ul>
+</ul>
 
           <form onSubmit={buscarRecetas}>
             <button className='boton' type="submit">Buscar Recetas</button>
           </form>
         </div>
-     {receta && (
-          <div>
-          <h2>Receta Encontrada:</h2>
-            <div className="recipe-card">
-            <nav>
-          <ul className="card-content">
-         <li><a href="#"></a></li>
-          <div className="card-img">
-         <img src={receta.image} alt="Receta" />
-       </div>
-         <div className="card-info">
-          <h5 className="card-title">{receta.label}</h5>
-         <p className="card-text">{receta.ingredientLines.map((ingrediente, index) => ( <li key={index}>{ingrediente}</li>
-     ))}</p>
-    </div> </ul>
+      
+      {receta && (
+           <div>
+        <h2>Receta Encontrada:</h2>
+<div className="recipe-card">
+<nav>
+  <ul className="card-content">
+    <li><a href="#"></a></li>
+    <div className="card-img">
+      <img src={receta.image} alt="Receta" />
+    </div>
+    <div className="card-info">
+      <h5 className="card-title">{receta.label}</h5>
+      <p className="card-text">{receta.ingredientLines.map((ingrediente, index) => ( <li key={index}>{ingrediente}</li>
+ ))}</p>
+    </div>
+   
+  </ul>
 </nav>
 </div>
 </div>
-)} </div>  </div>
+
+      )}
+       </div>
+    </div>
   );
 };
 
