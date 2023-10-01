@@ -11,7 +11,7 @@ const BuscadorRecetas = () => {
   const agregarIngrediente = (e) => {
     e.preventDefault();
     if (ingrediente) {
-      setIngredientes([...ingredientes, { ingrediente, cantidad }]);//preguntar
+      setIngredientes([...ingredientes, { ingrediente, cantidad }]);
       setIngrediente('');
       setCantidad('');
     }
@@ -35,7 +35,7 @@ const BuscadorRecetas = () => {
 
       try {
         const response = await axios.get(`https://api.edamam.com/search?q=${ingredientesParaBuscar}&app_id=${appId}&app_key=${appKey}&lang=${idioma}`);
-        const primeraReceta = response.data.hits[0].recipe; //preguntar
+        const primeraReceta = response.data.hits[0].recipe; 
         setReceta(primeraReceta);
       } catch (error) {
         console.error(error);
