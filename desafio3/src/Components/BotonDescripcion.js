@@ -67,24 +67,24 @@ const BuscadorRecetas = () => {
             </div>
           </form>
           <h3>Ingredientes Seleccionados:</h3>
-       <ul>
-         {ingredientes.map((item, index) => (
-          <li key={index}>
-           {item.cantidad} {item.ingrediente}
-           <button className='remove' onClick={() => eliminarIngrediente(index)}>
-           <img
-             src="https://www.freeiconspng.com/thumbs/remove-icon-png/remove-icon-png-24.png"
-             alt="Eliminar"
-             className='eliminarBoton'
-           />
-</button>
-          </li>
-           ))}
-</ul>
+  <ul>
+    {ingredientes.map((item, index) => (
+      <li key={index}>
+        {item.cantidad} {item.ingrediente}
+        <button className='remove' onClick={() => eliminarIngrediente(index)}>
+          <img
+            src="https://www.freeiconspng.com/thumbs/remove-icon-png/remove-icon-png-24.png"
+            alt="Eliminar"
+            className='eliminarBoton'
+          />
+        </button>
+      </li>
+    ))}
+  </ul>
 
-          <form onSubmit={buscarRecetas}>
-            <button className='boton' type="submit">Buscar Recetas</button>
-          </form>
+    <form onSubmit={buscarRecetas}>
+      <button className='boton' type="submit">Buscar Recetas</button>
+    </form>
         </div>
       
       {receta && (

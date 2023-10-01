@@ -4,7 +4,7 @@ body{
   background-repeat: no-repeat;
 }
 
-h1 {
+h1,h2 {
   display: flex;
   align-items: center; 
   justify-content: center;
@@ -28,11 +28,14 @@ h1 {
 .card {
   background-color: #f9f9f9;
   border: 1px solid #ccc;
-  padding: 20px;
   margin-bottom: 20px;
   border-radius: 10px;
   width: 850px;
-  height: 200px;
+  margin-top: -50px;
+  overflow-y: auto; /* Habilita el desplazamiento vertical si es necesario */
+  max-height: 400px; /* Establece una altura máxima para la card */
+  padding: 20px; /* Agrega espacio interno para mejorar el diseño */
+
 }
 
 .form{
@@ -46,8 +49,14 @@ h1 {
   border: none;
   padding: 10px 20px;
   cursor: pointer;
-  margin-left: 10px;
 }
+.boton-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end; /* Alinea el botón en el extremo inferior */
+  height: 100%; /* Asegura que el div ocupe toda la altura disponible */
+}
+
 .botonAgregar{
   background-color: #e4cda1;
   color: #fff;
@@ -99,7 +108,7 @@ ul {
 }
 .recipe-card {
   background-color:#ffffff  ;
-  margin-top: 30px ; 
+  margin-top: -30px ; 
   border: 1px solid #ccc;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
