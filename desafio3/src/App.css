@@ -1,38 +1,163 @@
-.App {
-  text-align: center;
+body{
+  background-image: url('https://cdn.pixabay.com/photo/2017/10/22/20/42/table-2879213_1280.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h1 {
+  display: flex;
+  align-items: center; 
+  justify-content: center;
+  text-align: center; 
+  height: 100px; 
+  color: #000;
+  text-shadow: 
+    -1px -1px 0 #fff, 
+    1px -1px 0 #fff,
+    -1px 1px 0 #fff,
+    1px 1px 0 #fff; 
+
+}
+.container {
+  max-width: 800px;
+  margin: 0 auto; 
+  padding: 20px; 
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+
+.card {
+  background-color: #f9f9f9;
+  border: 1px solid #ccc;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  width: 850px;
+  height: 200px;
+}
+
+.form{
+  margin-left: 20px;
+}
+
+
+.boton {
+  background-color: #568021;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+.botonAgregar{
+  background-color: #e4cda1;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  margin-left: 85px;
+}
+
+.eliminarBoton{
+  width: 18px;
+  height: 18px;
+}
+.remove{
+  background-color: rgb(231, 89, 89);
+  border-radius: 10px;
+  margin-left: 10px;
+}
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+
+@media (max-width: 768px) {
+  .container {
+    max-width: 100%; 
+    padding: 10px; 
+  }
+
+  .card {
+    padding: 10px; 
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+
+.receta-card {
+  display: flex; 
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 5px;
+  margin-top: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+}
+
+.card {
+  border: 1px solid #111010; 
+}
+.recipe-card {
+  background-color:#ffffff  ;
+  margin-top: 30px ; 
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  display: flex;
+  width: 850px;  
+  height: 450px;
+  align-items: flex-start;
+}
+
+
+.card-img img {
+  width: 380px; 
+  height: 420px; 
+  object-fit: cover; 
+  display: block; 
+  border-radius: 8px 0 0 8px; 
+  margin-right: 100px; 
+  flex: 0 0 auto;
+  margin-right: 0px;
+}
+
+.card-info {
+  max-width: 500px; 
+  margin: 0 auto; 
+  padding: 20px;
+  
+}
+.card-body {
+  overflow: hidden;
+  margin-top: 15px;
+  margin-left: -540px; 
+}
+
+.card-title {
+  font-size: 1.45rem;
+margin-top: -30px;
+margin-bottom: 0;
+}
+.cards-container {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin: 20px auto;
+  max-width: 800px;
+  margin-top: 70px; 
 }
 
-.App-link {
-  color: #61dafb;
+.card-text {
+  margin-top: 10px;
+  margin-bottom: 0;
+  font-size: 13px
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+nav ul {
+  display: flex;
+  justify-content: space-between;
+  list-style-type: none; 
+  padding: 0; 
+
 }
